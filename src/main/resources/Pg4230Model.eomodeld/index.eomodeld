@@ -1,0 +1,32 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = "jdbc:postgresql://localhost:5432/wopg4230"; 
+        driver = "org.postgresql.Driver"; 
+        password = ""; 
+        plugin = PostgresqlPlugIn; 
+        username = wopg4230; 
+    }; 
+    entities = (
+        {className = "com.triptera.demo.wopg4230.model.TblPerson"; name = TblPerson; }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Default; 
+            databaseConfigs = {
+                Default = {
+                    adaptorName = JDBC; 
+                    connectionDictionary = {
+                        URL = "jdbc:postgresql://localhost:5432/wopg4230"; 
+                        driver = "org.postgresql.Driver"; 
+                        password = ""; 
+                        plugin = PostgresqlPlugIn; 
+                        username = wopg4230; 
+                    }; 
+                    prototypeEntityName = EOJDBCPostgresqlPrototypes; 
+                }; 
+            }; 
+        }; 
+    }; 
+}

@@ -1,0 +1,8 @@
+ -destination src/main/java \
+ -extension java \
+ -java \
+ -model src/main/resources/Pg4230Model.eomodeld \
+ -packagedirs \
+ -refmodel /Library/WebObjects/Versions/WebObjects543/Library/Frameworks/ERPrototypes.framework/Resources/erprototypes.eomodeld \
+ -subclassDestination src/main/java \
+ -verbose

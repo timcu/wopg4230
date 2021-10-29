@@ -1,0 +1,27 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "dollar_amount"; 
+            name = dollarAmount; 
+            prototypeName = currencyAmount; 
+            userInfo = {"_EntityModeler" = {documentation = "Value that loses scale"; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "id_person"; 
+            name = idPerson; 
+            prototypeName = id; 
+        }
+    ); 
+    attributesUsedForLocking = (idPerson); 
+    className = "com.triptera.demo.wopg4230.model.TblPerson"; 
+    classProperties = (dollarAmount); 
+    externalName = "tbl_person"; 
+    fetchSpecificationDictionary = {}; 
+    name = TblPerson; 
+    primaryKeyAttributes = (idPerson); 
+    userInfo = {
+        "_EntityModeler" = {parentClassName = "er.extensions.eof.ERXGenericRecord"; }; 
+    }; 
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml" xml:lang = "en" lang = "en">
+  <head>
+    <meta http-equiv = "Content-Type" content = "text/html; charset=utf-8" />
+    <title>Postgresql JDBC Driver 42.3.0 tester</title>
+  </head>
+  <body>
+    <h1> Postgresql JDBC Driver 42.3.0 tester</h1>
+    <p>This app compares versions 42.3.0 and 42.2.24 of the postgresql jdbc driver. 
+      The version is specified in pom.xml.</p>
+    <table>
+      <tr>
+        <td>
+          <pre>       
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.postgresql&lt;/groupId&gt;
+            &lt;artifactId&gt;postgresql&lt;/artifactId&gt;
+            &lt;version&gt;42.3.0&lt;/version&gt;
+        &lt;/dependency&gt;
+    </pre>
+        </td>        <td>If the dollar value ends in 4 zeroes and the user repeatedly clicks &quot;edit&quot; then &quot;save&quot; after about 6 times the last 4 zeroes will be truncated.</td>
+        </tr>
+        <tr>
+        <td>
+          <pre>
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.postgresql&lt;/groupId&gt;
+            &lt;artifactId&gt;postgresql&lt;/artifactId&gt;
+            &lt;version&gt;42.2.24&lt;/version&gt;
+        &lt;/dependency&gt;
+    </pre>
+        </td>
+        <td>Entered data stays the same</td>
+      </tr>
+    </table>
+    <div>Dollar amount (should be $150,000)</div>
+    <wo:if condition = "$tfEdit">
+      <wo:form>
+        <div><wo:submit action = "$doSave" value = "save" /></div>
+        <div><wo:textfield value = "$thePerson.dollarAmount" numberformat = "$fmt" size = "10" /></div>
+      </wo:form>
+    </wo:if>
+    <wo:else>
+      <div>
+        <wo:link action = "$doEdit">Edit</wo:link>
+      </div>
+      <div><wo:str value = "$thePerson.dollarAmount" numberformat = "$fmt" /></div>
+    </wo:else>
+  </body>
+</html>
