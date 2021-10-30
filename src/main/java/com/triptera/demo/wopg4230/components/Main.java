@@ -3,6 +3,8 @@ package com.triptera.demo.wopg4230.components;
 
 import java.math.BigDecimal;
 
+import org.apache.log4j.Logger;
+
 import com.triptera.demo.wopg4230.model.TblPerson;
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOComponent;
@@ -13,6 +15,7 @@ import er.extensions.eof.ERXEC;
 
 public class Main extends WOComponent {
 	private static final long serialVersionUID = 1L;
+	private static final Logger logger = Logger.getLogger(Main.class);
 
 	public Main(WOContext context) {
 		super(context);
@@ -55,4 +58,15 @@ public class Main extends WOComponent {
 	public boolean tfEdit;
 	public final String fmt = "$#,##0; ($#,##0)"; 
 	
+	public void doRepeatSave() {
+	  EOEditingContext ec = ERXEC.newEditingContext();
+	  // fetch the first record from database table tbl_person
+	  TblPerson p = TblPerson.fetchTblPerson(ec, null);
+	  BigDecimal bd150k = BigDecimal.valueOf(1500000000, 4);
+	  for (int i=0; i < 10; i++) {
+	    p.setDollarAmount(bd150k);
+	    ec.saveChanges();
+	    logger.info("Count " + i + " p.dollarAmount=" + p.dollarAmount() );
+	  }
+	}
 }
